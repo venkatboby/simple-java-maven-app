@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'softinstigate/maven-aws'
+            image 'devopscafe/maven-awscli'
             args '-v /root/.m2:/root/.m2'
         }
     }
