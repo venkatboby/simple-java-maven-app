@@ -9,23 +9,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-               post {
-        success {
-            emailext (
-                to: "letstrydevops@gmail.com",
+                emailext (
+                to: "letstrydvops@gmail.com",
                 subject: "SUCCESS",
                 body: "SUCCESS!"
             )
-        }
-        failure {
-			emailext (
-                to: "letstrydevops@gmail.com",
-                subject: "FAILURE",
-                body: "FAILURE!"
-            )
-        }
-    }
-
             }
         }
         stage('Test') {
