@@ -50,5 +50,10 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
+        stage('Store-in-S3') {
+            steps {
+                sh 'aws s3 cp /var/lib/jenkins/jobs/junkingjenkins/workspace/target/my-app-1.0-SNAPSHOT.jar s3://devopscafe-training/Jenkins-wars/ '
+            }
+        }
     }
 }
