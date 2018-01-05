@@ -1,4 +1,4 @@
-properties([parameters([string(name: 'kotajenkins', defaultValue: 'devopscafe-training/Jenkins-wars')])])
+properties([parameters([string(name: 'bucket name', defaultValue: 'kotajenkins-training/Jenkins-wars')])])
 pipeline {
     agent {
         docker {
