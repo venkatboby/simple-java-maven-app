@@ -1,4 +1,4 @@
-properties([parameters([string(name: 'Bucket_Name', defaultValue: 'devopscafe-training/Jenkins-wars')])])
+properties([parameters([string(name: 'kotajenkins', defaultValue: 'devopscafe-training/Jenkins-wars')])])
 pipeline {
     agent {
         docker {
@@ -14,7 +14,7 @@ pipeline {
             post {
                 success  {
                     emailext  (
-                to: "letstrydvops@gmail.com",
+                to: "kota.venkatraman@gmail.com",
                 subject: "Job was Successful: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """=== Job Details as Below === 
                   Job Name = '${env.JOB_NAME}'
@@ -25,7 +25,7 @@ pipeline {
                 }
                 failure  {
                     emailext  (
-                to: "letstrydvops@gmail.com",
+                to: "kota.venkatraman@gmail.com",
                 subject: "Job Failed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """=== Job Details as Below === 
                   Job Name = '${env.JOB_NAME}'
@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Store-in-S3') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/jobs/junkingjenkins/workspace/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
+                sh "aws s3 cp /var/lib/jenkins/kota/junkingjenkins/workspace/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
             }
         }
     }
