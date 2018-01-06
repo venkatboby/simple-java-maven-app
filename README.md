@@ -5,7 +5,7 @@ This repository is for the
 tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
 
 The repository contains a simple Java application which outputs the string
-"Hello world hii whats going on!!!" and is accompanied by a unit test to check that the main
+"Hello world!!!" and is accompanied by a unit test to check that the main
 application works as expected.
 
 The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
