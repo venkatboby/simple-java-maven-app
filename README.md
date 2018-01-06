@@ -14,4 +14,3 @@ contains a shell script with commands that are executed when Jenkins processes
 the "Deliver" stage of your Pipeline. 
 
 Lets edit this file
-
