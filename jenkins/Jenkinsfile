@@ -1,4 +1,4 @@
-properties([parameters([string(name: 'Bucket_Name', defaultValue: 'kotajenkins''bobytask')])])
+properties([parameters([string(name: 'Bucket_Name', defaultValue: 'kotajenkins','bobytask')])])
 pipeline {
     agent {
         docker {
