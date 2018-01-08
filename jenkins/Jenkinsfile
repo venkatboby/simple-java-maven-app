@@ -1,4 +1,13 @@
-properties([parameters([string(name: 'Bucket_Name', defaultValue: 'kotajenkins',[string(name: 'Bucket_Name', defaultValue:'bobytask')])])
+properties(
+    [
+        parameters(
+            [
+                string(name: 'Bucket_Name', defaultValue: 'kotajenkins'),
+                string(name: 'Bucket2_Name', defaultValue:'bobytask')
+            ]
+        )
+    ]
+)
 pipeline {
     agent {
         docker {
@@ -58,7 +67,7 @@ pipeline {
         }
         stage('Store-in-S4') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/workspace/kota/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/kota/target/my-app-1.0-SNAPSHOT.jar s3://{params.Bucket2_Name}/"
             }
         }
     }
