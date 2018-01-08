@@ -64,7 +64,7 @@ pipeline {
             steps {
                 sh "aws s3 cp /var/lib/jenkins/workspace/kota/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name}/"
             }
-            input(message: 'proceed?')
+            input(message:'proceed?')
         }
         stage('Store-in-S4') {
             steps {
